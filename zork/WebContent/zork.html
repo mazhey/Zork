@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+function setColor(room){
+	if (room==1){
+		document.getElementById("foyer").style.backgroundColor = "orange";	
+	}else{
+		document.getElementById("foyer").style.backgroundColor = "white";	
+	}
+	if (room==2){
+		document.getElementById("frontRoom").style.backgroundColor = "orange";	
+	}else{
+		document.getElementById("frontRoom").style.backgroundColor = "white";	
+	}
+	if (room==3){
+		document.getElementById("library").style.backgroundColor = "orange";	
+	}else{
+		document.getElementById("library").style.backgroundColor = "white";	
+	}
+	if (room==4){
+		document.getElementById("kitchen").style.backgroundColor = "orange";	
+	}else{
+		document.getElementById("kitchen").style.backgroundColor = "white";	
+	}
+	if (room==5){
+		document.getElementById("diningRoom").style.backgroundColor = "orange";	
+	}else{
+		document.getElementById("diningRoom").style.backgroundColor = "white";	
+	}
+	if (room==6){
+		document.getElementById("vault").style.backgroundColor = "orange";	
+	}else{
+		document.getElementById("vault").style.backgroundColor = "white";	
+	}
+	if (room==7){
+		document.getElementById("parlor").style.backgroundColor = "orange";	
+	}else{
+		document.getElementById("parlor").style.backgroundColor = "white";	
+	}
+	
+}
+function Zork(){
+	var compass;
+	//var room=1;
+	room = document.getElementById("command").value;
+	document.getElementById("command").value ="";
+	setColor(room);
+	if(room==1){
+	document.getElementById("message").innerHTML = "You are standing at Foyer</br>You can go N(2) or Q to quit"	
+		document.getElementById("moves").value = document.getElementById("moves").value + "\\\rYou are current at Foyer. There is a scorpion. You can go North to FrontRoom."
+		
+	    	
+	
+		
+	   
+	
+}
+else if (room==2){
+	document.getElementById("message").innerHTML = "You are standing at Front room</br>You can go S(1) E(4) or W(3) or Q to quit"
+		document.getElementById("moves").value =  document.getElementById("moves").value + "\\\rYou are current at Front room.There is a piano. You can go South to Foyer."+
+		"You can go East to Kitchen. You can go West to Library."
+		
+           	
+		
+}
+else if (room==3){
+	document.getElementById("message").innerHTML = "You are standing at Library </br>You can go E(2) or N(7) Or Q to quit"
+		document.getElementById("moves").value =  document.getElementById("moves").value + "\\\rYou are at library. There is a spider. "
+	
+}
+else if (room==4){
+	document.getElementById("message").innerHTML = "You are standing at Kitchen </br>You can go W(2) or N(5) Q to quit"
+		document.getElementById("moves").value =  document.getElementById("moves").value + "\\\rYou are at kitchen. There are bats. "
+		
+}
+else if (room==5){
+	document.getElementById("message").innerHTML = "You are standing at Dining Room </br>You can go S(4) or W(6) Q to quit"
+		document.getElementById("moves").value =  document.getElementById("moves").value + "\\\rYou are at dining room. There is a dust box."
+		
+}
+else if (room==6){
+	document.getElementById("message").innerHTML = "You are standing at Vault </br>You can go W(7) S(2) or E(5) or Q to quit"
+		document.getElementById("moves").value =  document.getElementById("moves").value + "\\\rYou are at vault. There is a treasure chest."
+	
+		
+}
+else if (room==7){
+	document.getElementById("message").innerHTML = "You are standing at Parlor </br>You can go E(6) or S(3) Q to quit"
+		document.getElementById("moves").value =  document.getElementById("moves").value + "\\\rYou are at parlor. There is a skeletons."
+		
+}
+else if (room=="Q"){
+	document.getElementById("message").innerHTML = "You are quit"
+}
+else{
+	alert("Enter a valid room number");
+}
+
+
+}
+
+
+</script>
+</head>
+<body>
+<h1>welcome to zork</h1>
+<table border="1" style="width:400px">
+<tr><td border="1" id="parlor" class="room">&nbsp;</td><td border="1" id="vault" class="room">&nbsp;</td><td border="1" id="diningRoom" class="room">&nbsp;</td></tr>
+<tr><td border="1" id="library" class="room">&nbsp;</td><td border="1" id="frontRoom" class="room">&nbsp;</td><td border="1" id="kitchen bats" class="room">&nbsp;</td></tr>
+<tr><td></td><td border="1" id="foyer" class="room">&nbsp;</td><td></td></tr>
+</table>
+
+<div id="message">
+You are standing at Foyer</br>You can go North(2)
+</div>
+<form action="javascript:Zork();">
+<input type="text" name="command" id="command"></input>
+<input type="submit" id="submit" name="submit">
+<img src="http://images.clipartpanda.com/death-clipart-tombstone-clipart.gif" alt="Game over. Dude." height="50"></img>
+</form>
+<h2>your moves:</h2>
+<textarea id="moves" rows="6" cols="50">
+
+</textarea>
+</body>
+</html>
